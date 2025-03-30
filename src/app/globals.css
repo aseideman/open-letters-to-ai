@@ -1,26 +1,46 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #f8f9fa;
+  --background: #121212;
+  --card-bg: #1e1e1e;
+  --secondary-bg: #2d2d2d;
+  --accent: #9333ea;
+  --border: #333333;
+  --border-opacity: 0.5;
+  --secondary-text: #a0a0a0;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Custom utility classes */
+.card {
+  background-color: transparent;
+  border-radius: 0.5rem;
+}
+
+input, textarea {
+  @apply bg-[#1e1e1e] border border-[#333333] border-opacity-50 
+    focus:outline-none focus:border-[#555555];
+}
+
+button {
+  @apply transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 
+    transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-secondary-bg text-white px-4 py-2 rounded-md hover:bg-opacity-80 
+    transition-colors duration-200 border border-border;
 }

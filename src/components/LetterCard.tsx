@@ -104,7 +104,7 @@ export default function LetterCard({ letter }: LetterCardProps) {
   }
 
   return (
-    <div className="p-4 border border-[#333333] border-opacity-50 rounded-lg">
+    <div className="p-4 border border-[rgba(51,51,51,0.5)] rounded-lg">
       {/* Letter content */}
       <div className="mb-4">
         <div className="text-secondary-text text-sm mb-2">
@@ -164,7 +164,7 @@ export default function LetterCard({ letter }: LetterCardProps) {
 
       {/* Comment section (expandable) */}
       {showComments && (
-        <div className="mt-4 pt-4 border-t border-[#333333] border-opacity-50">
+        <div className="mt-4 pt-4 border-t border-[rgba(51,51,51,0.5)]">
           {/* Comment input */}
           <div className="flex space-x-2 mb-4">
             <input
@@ -172,7 +172,7 @@ export default function LetterCard({ letter }: LetterCardProps) {
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}
               placeholder="Add a comment..."
-              className="flex-1 bg-[#1e1e1e] border border-[#333333] border-opacity-50 rounded-full px-4 py-2 text-white focus:outline-none"
+              className="flex-1 bg-[#1e1e1e] border border-[rgba(51,51,51,0.5)] rounded-full px-4 py-2 text-white focus:outline-none"
             />
             <button 
               onClick={handleAddComment}
@@ -197,7 +197,7 @@ export default function LetterCard({ letter }: LetterCardProps) {
                 <div key={comment.id} className={`p-3 rounded-md ${
                   comment.is_ai 
                     ? 'bg-[#1e1e1e] border-l-[2px] border-[#9333ea]' 
-                    : 'bg-[#1e1e1e] border border-[#333333] border-opacity-50'
+                    : 'bg-[#1e1e1e] border border-[rgba(51,51,51,0.5)]'
                 }`}>
                   <div className="text-secondary-text text-xs mb-1">
                     {comment.is_ai ? 'AI' : 'Anonymous'} • {new Date(comment.created_at).toLocaleDateString()}

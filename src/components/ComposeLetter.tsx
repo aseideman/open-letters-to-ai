@@ -52,7 +52,7 @@ export default function ComposeLetter({ onLetterSubmit }: ComposeLetterProps) {
   const isEmpty = !content.trim()
 
   return (
-    <div className="card p-4 border border-[#333333] border-opacity-50">
+    <div className="card p-4 border border-[rgba(51,51,51,0.5)]">
       {error && (
         <div className="bg-red-900 bg-opacity-50 text-white p-3 rounded mb-4">
           {error}
@@ -71,22 +71,27 @@ export default function ComposeLetter({ onLetterSubmit }: ComposeLetterProps) {
           />
         </div>
         
-        <div className="mt-4 flex justify-between items-center">
-          <div className={`text-xs ${isOverLimit ? 'text-red-500' : 'text-secondary-text'}`}>
-            {remainingChars} characters remaining
-          </div>
+        <div className="relative mt-4">
+          {/* Separator line that doesn't reach full width */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-4/5 h-px bg-[rgba(51,51,51,0.5)]"></div>
           
-          <button
-            type="submit"
-            disabled={isEmpty || isOverLimit || loading}
-            className={`px-5 py-2 rounded-full font-medium transition-colors duration-200 ${
-              isEmpty
-                ? 'bg-[#2d2d2d] text-[#6e767d] cursor-not-allowed'
-                : 'bg-white text-black hover:bg-opacity-90'
-            }`}
-          >
-            {loading ? 'Sending...' : 'Submit'}
-          </button>
+          <div className="pt-4 flex justify-between items-center px-[10%]">
+            <div className={`text-xs ${isOverLimit ? 'text-red-500' : 'text-secondary-text'}`}>
+              {remainingChars} characters remaining
+            </div>
+            
+            <button
+              type="submit"
+              disabled={isEmpty || isOverLimit || loading}
+              className={`px-5 py-2 rounded-full font-medium transition-colors duration-200 ${
+                isEmpty
+                  ? 'bg-[#2d2d2d] text-[#6e767d] cursor-not-allowed'
+                  : 'bg-white text-black hover:bg-opacity-90'
+              }`}
+            >
+              {loading ? 'Sending...' : 'Submit'}
+            </button>
+          </div>
         </div>
       </form>
     </div>

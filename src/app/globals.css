@@ -10,7 +10,7 @@
   --accent: #9333ea;
   --border: #333333;
   --border-opacity: 0.5;
-  --border-rgba: rgba(51, 51, 51, 0.5);
+  --border-color: rgba(51, 51, 51, 0.5);
   --secondary-text: #a0a0a0;
 }
 
@@ -28,8 +28,8 @@ body {
 }
 
 input, textarea {
-  @apply bg-[#1e1e1e] border border-[rgba(51,51,51,0.5)] 
-    focus:outline-none focus:border-[#555555];
+  @apply bg-[#1e1e1e] border border-gray-700/50
+    focus:outline-none focus:border-gray-500;
 }
 
 button {

@@ -95,7 +95,7 @@ export default function Home() {
       {/* Letter feed */}
       <div className="space-y-4">
         {loading && page === 1 ? (
-          <div className="card p-6 text-center border border-[rgba(51,51,51,0.5)]">
+          <div className="card p-6 text-center border border-gray-700/50">
             <p className="text-secondary-text">Loading letters...</p>
           </div>
         ) : letters.length > 0 ? (
@@ -103,7 +103,7 @@ export default function Home() {
             <LetterCard key={letter.id} letter={letter} />
           ))
         ) : (
-          <div className="card p-6 text-center border border-[rgba(51,51,51,0.5)]">
+          <div className="card p-6 text-center border border-gray-700/50">
             <p className="text-secondary-text">No letters yet. Be the first to write one!</p>
           </div>
         )}

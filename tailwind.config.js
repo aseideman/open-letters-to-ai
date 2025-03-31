@@ -12,6 +12,12 @@ module.exports = {
         'secondary-text': '#a0a0a0',
         'border': '#333333',
       },
+      borderOpacity: {
+        '50': '0.5',
+      },
+      opacity: {
+        '50': '0.5',
+      },
     },
   },
   plugins: [],
